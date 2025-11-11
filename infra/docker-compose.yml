@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: trader
+      POSTGRES_PASSWORD: trader
+      POSTGRES_DB: trading_journal
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  backend:
+    build: ../backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://trader:trader@db:5432/trading_journal
+      SECRET_KEY: change-this-secret
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  frontend:
+    build: ../frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
