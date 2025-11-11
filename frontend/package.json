@@ -1,0 +1,27 @@
+{
+  "name": "trading-journal-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext ts,tsx"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-router-dom": "6.22.3",
+    "@tanstack/react-query": "5.45.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.43",
+    "@types/react-dom": "18.2.17",
+    "@typescript-eslint/eslint-plugin": "6.21.0",
+    "@typescript-eslint/parser": "6.21.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-react": "7.33.2",
+    "typescript": "5.4.5",
+    "vite": "5.0.12"
+  }
+}
