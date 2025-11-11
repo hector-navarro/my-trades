@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo:6
+    restart: always
+    ports:
+      - '27017:27017'
+    environment:
+      MONGO_INITDB_DATABASE: trading_diary
+    volumes:
+      - mongo_data:/data/db
+  api:
+    build: .
+    command: npm run start:dev
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongo:27017/trading_diary
+      - JWT_SECRET=dev-secret
+      - JWT_REFRESH_SECRET=dev-refresh-secret
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+volumes:
+  mongo_data:
