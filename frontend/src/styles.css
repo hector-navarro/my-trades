@@ -1,0 +1,43 @@
+:root {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+a {
+  color: #38bdf8;
+}
+
+body {
+  margin: 0;
+}
+
+.card {
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  border: none;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  background: rgba(30, 41, 59, 0.9);
+  color: #e2e8f0;
+}
